@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Survive.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 335c4a4199326bc43be708b082c6dbe0
+  - enabled: 1
+    path: Assets/Scenes/textRoom1.unity
+    guid: 4d8d662866ca3164ea291556a6451331
+  - enabled: 1
+    path: Assets/Scenes/textRoom2.unity
+    guid: b73e1764e478490489fcc844bd34aa90
   m_configObjects: {}
