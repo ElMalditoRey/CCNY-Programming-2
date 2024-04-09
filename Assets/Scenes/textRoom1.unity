@@ -357,6 +357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UtilityButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8655136405408024343, guid: e55e966c18367804584c1c9660b166ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8655136405408024344, guid: e55e966c18367804584c1c9660b166ed, type: 3}
       propertyPath: myMgr
       value: 
@@ -774,6 +778,7 @@ GameObject:
   - component: {fileID: 1217068890}
   - component: {fileID: 1217068889}
   - component: {fileID: 1217068888}
+  - component: {fileID: 1217068891}
   m_Layer: 5
   m_Name: submitButton
   m_TagString: Untagged
@@ -849,7 +854,55 @@ MonoBehaviour:
       - m_Target: {fileID: 1608139350}
         m_TargetAssemblyTypeName: textGameManager, Assembly-CSharp
         m_MethodName: SetName
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2145835383}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2145835382}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 168910456}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2145835387}
+        m_TargetAssemblyTypeName: InputHelper, Assembly-CSharp
+        m_MethodName: replaceText
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1217068886}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -896,6 +949,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217068886}
   m_CullTransparentMesh: 1
+--- !u!114 &1217068891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217068886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4fe295729b2074fad3e5a14d622b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMgr: {fileID: 0}
+  myKey: 
 --- !u!1 &1288552692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,14 +1098,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myInventory: []
-  myInput: {fileID: 2145835383}
-  playerName: 
-  inputField: {fileID: 2145835382}
-  submitButton: {fileID: 1217068886}
-  WelcomeObject: {fileID: 80020923}
-  sceneChanger: {fileID: 168910456}
-  welcomeMessage: Nice to meet you <name>...
-  replaceText: <name>
 --- !u!4 &1608139351
 Transform:
   m_ObjectHideFlags: 0
@@ -1430,6 +1489,7 @@ GameObject:
   - component: {fileID: 2145835386}
   - component: {fileID: 2145835385}
   - component: {fileID: 2145835383}
+  - component: {fileID: 2145835387}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -1594,3 +1654,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145835382}
   m_CullTransparentMesh: 1
+--- !u!114 &2145835387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145835382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86e5ff592f6af843a186d999618ab94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyText: {fileID: 80020925}
+  inputText: {fileID: 2145835383}
+  newBody: Hi, <name>, nice to meet you ...
+  replaceTarget: <name>
