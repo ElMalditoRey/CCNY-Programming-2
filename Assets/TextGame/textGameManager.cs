@@ -15,12 +15,13 @@ public class textGameManager : MonoBehaviour
 
         get //this get function will run once a textGameManager instance is declared in any of our code
         {
-
-            if(_MgrInstance == null) //if there is no actual instance in scene yet (private mgr == null), then spawn a gameobject
+            _MgrInstance = FindObjectOfType<textGameManager>();
+            //if there is no actual instance in scene yet (private mgr == null even after Find()), then spawn a gameobject & add script
+            if (_MgrInstance == null) 
             {
-                GameObject myGO = new GameObject("GameManager");
-                myGO.AddComponent<textGameManager>();
-                DontDestroyOnLoad(myGO);
+                    GameObject myGO = new GameObject("GameManager");
+                    myGO.AddComponent<textGameManager>();
+                    DontDestroyOnLoad(myGO);
             }
             return _MgrInstance; //return a valid game manager
         }   
@@ -36,28 +37,13 @@ public class textGameManager : MonoBehaviour
 
 
 
-
-
     public List<string> myInventory;
-
-    public TMP_InputField myInput;
-    public string playerName;
-
-    public GameObject inputField;
-    public GameObject submitButton;
-    public GameObject WelcomeObject;
-    public GameObject sceneChanger;
-    TextMeshProUGUI WelcomeText;
-
-    public string welcomeMessage;
-    public string replaceText;
-    
+    private string playerName;   
 
 
     // Start is called before the first frame update
     void Start()
     {
-        WelcomeText = WelcomeObject.GetComponent<TextMeshProUGUI>();
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -67,15 +53,18 @@ public class textGameManager : MonoBehaviour
         
     }
 
-    public void SetName()
+    public void SetName(string input)
+    {
+        playerName = input;
+    }
+
+    public void SetName(TMP_InputField myInput)
     {
         playerName = myInput.text;
-        submitButton.SetActive(false);
-        inputField.SetActive(false);
+    }
 
-        string newWelcome = welcomeMessage.Replace(replaceText, playerName);
-        WelcomeText.text = newWelcome;
-
-        sceneChanger.SetActive(true);
+    public string GetName()
+    {
+        return playerName;
     }
 }

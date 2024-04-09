@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class buttonHelper : MonoBehaviour
 {
     public textGameManager myMgr;
+    public string myKey;
 
     public void Start()
     {
-        myMgr = FindObjectOfType<textGameManager>();
+        myMgr = textGameManager.myInstance;
     }
     //little script to change to a new scene
     public void GoToScene(string sceneName)
@@ -31,5 +32,10 @@ public class buttonHelper : MonoBehaviour
     public void SetName(string name)
     {
         myMgr.name = name;
+    }
+    
+    public void replaceText(string body, string target, string replacement)
+    {
+
     }
 }
