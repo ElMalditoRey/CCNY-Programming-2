@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1910992763109142946}
   m_Layer: 0
   m_Name: Goalie
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +133,4 @@ MonoBehaviour:
   curPlayer: {fileID: 0}
   curBall: {fileID: 0}
   myTarget: {fileID: 0}
+  myScript: {fileID: 0}
